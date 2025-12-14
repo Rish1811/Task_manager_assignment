@@ -1,74 +1,62 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Task Manager App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple task management application built with React, inspired by Trello. It allows users to create, edit, delete, and drag/drop tasks across three boards: To-Do, In-Progress, and Completed. Data is persisted using localStorage, and initial tasks are loaded from a JSON file.
 
-## Available Scripts
+## Setup
 
-In the project directory, you can run:
+1. Clone the repository:
+ git clone <your-repo-url>
+ cd task-manager-app
+2. Install dependencies:
+ npm install react-beautiful-dnd dayjs --legacy-peer-deps
 
-### `npm start`
+3. Start the development server:
+   npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The app will be available at `http://localhost:3000`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Scripts
 
-### `npm test`
+- `npm start`: Runs the app in development mode.
+- `npm run build`: Builds the app for production.
+- `npm test`: Runs tests (if any).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Folder Structure
 
-### `npm run build`
+- `public/`: Static assets (index.html, favicon, etc.).
+- `src/`
+- `components/`: Reusable components (TaskModal.js, Filters.js).
+- `App.js`: Main application component.
+- `App.css`: Global styles.
+- `tasks.json`: Initial tasks data.
+- `index.js`: Entry point.
+- `package.json`: Dependencies and scripts.
+- `README.md`: This file.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Responsive 3-column board layout (To-Do, In-Progress, Completed).
+- Add/edit tasks via modal with title, description, priority, due date, status.
+- Drag-and-drop to move tasks between boards (updates status instantly).
+- Filters: Priority, Due Date (by date), Status.
+- Sorting: Newest/Oldest First, Closest Due Date.
+- Delete with confirmation; duplicate title handling (appends (1), etc.).
+- Loads from tasks.json; persists to localStorage.
+- Classic UI with vanilla CSS.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Built with React, react-beautiful-dnd (for drag-drop), dayjs (for dates).
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### GitHub Pages
+1. Install gh-pages: `npm install --save-dev gh-pages`
+2. Add to `package.json` (in "homepage" field): `"homepage": "https://<your-username>.github.io/task-manager-app"`
+3. Add to "scripts": `"predeploy": "npm run build", "deploy": "gh-pages -d build"`
+4. Run: `npm run deploy`
+5. Enable GitHub Pages in repo settings > Pages > Source: Deploy from gh-pages branch.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Vercel/Netlify
+- Push to GitHub first (steps below).
+- Connect repo to Vercel/Netlify dashboard; auto-deploys on push.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Task_manager_assignment
->>>>>>> 2bd7115b3bb1e2aab5aa22e818ab706a6a5d1b13
+Live Demo: [Insert your live URL here after deployment]
